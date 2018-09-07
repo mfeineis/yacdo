@@ -1,0 +1,35 @@
+version: 1
+
+processor:
+  environment:
+    - DEBUG
+
+  intents:
+    - type: "CREATE_USER?":
+      handler: "./createUser.ts"
+      permissions:
+        - CAN_CREATE_USERS
+      produces: 
+        - "USER_CREATED!"
+      replay:
+        - "USER_CREATED!"
+      schema:
+        email: String@email
+        firstName: String@firstName
+        userId: String@userId
+
+  facts:
+    - type: "USER_CREATED!"
+      schema:
+        email: String@email
+        firstName: String@firstName
+        userId: String@userId
+
+readviews:
+  - handler: "./readviews/createdUsers.ts"
+    name: "allUsers"
+    replay:
+      - "USER_CREATED!"
+    #schema:
+      # TODO: GraphQL?
+

@@ -1,0 +1,15 @@
+version: 1
+
+system:
+  #api:
+  #  build: "./auth/"
+
+  #authorization:
+  #  build: "./auth/"
+
+  #broker:
+  #  build: "./bus"
+
+  processors:
+    users:
+      build: "./users/"
