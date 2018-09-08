@@ -1,15 +1,23 @@
-version: 1
+version: "0.1"
 
 system:
-  #api:
-  #  build: "./auth/"
+  # Not deployable in a production environment
+  # but enables some developer conveniences like
+  # skipping authentication/authorization
+  private: true
 
-  #authorization:
-  #  build: "./auth/"
+  api:
+    handler: "./auth/gateway.ts"
+    runtime: "typescript"
 
-  #broker:
-  #  build: "./bus"
+  authorizer:
+    handler: "./auth/authorizer.ts"
+    runtime: "typescript"
+
+  bus:
+    handler: "./bus/main.ts"
+    runtime: "typescript"
 
   processors:
-    users:
-      build: "./users/"
+    - "./users/write/"
+    - "./users/read/"
