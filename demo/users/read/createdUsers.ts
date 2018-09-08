@@ -2,8 +2,8 @@
 export function setup() {
     const users = new Map();
 
-    function replay(msg) {
-        switch (msg.type) {
+    function replay(msg: Message) {
+        switch (msg.id) {
             case "USER_CREATED!":
                 users.set(msg.body.userId, msg.body);
                 break;

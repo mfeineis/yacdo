@@ -23,5 +23,5 @@ system:
 
   # All message processors to be mounted
   processors:
-    - "./users/write/"
     - "./users/read/"
+    - "./users/write/"

@@ -3,12 +3,12 @@ interface RequestContext {
     headers: {
         Authorize?: string;
     },
-    send(it?: any);
+    send(it?: any): void;
 }
 
 interface IntentContext {
-    stateFact(name: String, body: any),
-    status(statusCode: Number, message?: String),
+    stateFact(name: String, body: any): void,
+    status(statusCode: Number, message?: String): void,
 }
 
 interface Message {

@@ -18,10 +18,17 @@ processor:
         email: String@email
         firstName: String@firstName
         userId: String@userId
+        meta:
+          correlationId: String@cid
+          timestamp: Int
 
   facts:
     - id: "USER_CREATED!"
       schema:
+        correlationId: String@cid
         email: String@email
         firstName: String@firstName
         userId: String@userId
+        meta:
+          correlationId: String@cid
+          timestampe: Int
