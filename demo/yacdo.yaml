@@ -6,18 +6,22 @@ system:
   # skipping authentication/authorization
   private: true
 
+  # All traffic will be channeled through this gateway
   api:
     handler: "./auth/gateway.ts"
     runtime: "typescript"
 
+  # Authorization is done here
   authorizer:
     handler: "./auth/authorizer.ts"
     runtime: "typescript"
 
+  # The message broker 
   bus:
     handler: "./bus/main.ts"
     runtime: "typescript"
 
+  # All message processors to be mounted
   processors:
     - "./users/write/"
     - "./users/read/"

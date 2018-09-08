@@ -24,25 +24,7 @@ export function setup() {
     }
 
     function health(req: RequestContext) {
-        console.log("createUser.health called");
-
-        if (!req.headers.Authorize) {
-            req.send();
-            return;
-        }
-
-        if (req.headers.Authorize === "valid-token") {
-            req.send();
-            return;
-        } else {
-            req.send({
-                body: {
-                    errorCode: 401,
-                    message: "Unauthorized",
-                },
-            });
-            return;
-        }
+        // TODO: Report health!
     }
 
     function onSignal() {
