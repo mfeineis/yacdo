@@ -8,18 +8,21 @@ system:
 
   # All traffic will be channeled through this gateway
   api:
-    handler: "./auth/gateway.ts"
-    runtime: "typescript"
+    handler:
+      main: "./auth/gateway.ts"
+      runtime: "typescript"
 
   # Authorization is done here
   authorizer:
-    handler: "./auth/authorizer.ts"
-    runtime: "typescript"
+    handler:
+      main: "./auth/authorizer.ts"
+      runtime: "typescript"
 
   # The message broker 
   bus:
-    handler: "./bus/main.ts"
-    runtime: "typescript"
+    handler:
+      main: "./bus/main.ts"
+      runtime: "typescript"
 
   # All message processors to be mounted
   processors:

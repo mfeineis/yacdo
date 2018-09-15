@@ -1,4 +1,4 @@
 
-export function setup() {
+export function main() {
     // TODO: Nothing to do here
 }

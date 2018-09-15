@@ -1,5 +1,5 @@
 
-export function setup() {
+export function main() {
     const users = new Map();
 
     function replay(msg: Message) {

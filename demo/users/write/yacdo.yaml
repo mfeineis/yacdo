@@ -6,14 +6,15 @@ processor:
 
   intents:
     - id: "CREATE_USER?"
-      handler: "./createUser.ts"
+      handler:
+        main: "./createUser.ts"
+        runtime: "typescript"
       permissions:
         - CAN_CREATE_USERS
       produces: 
         - "USER_CREATED!"
       replay:
         - "USER_CREATED!"
-      runtime: "typescript"
       schema:
         email: String@email
         firstName: String@firstName
@@ -31,4 +32,4 @@ processor:
         userId: String@userId
         meta:
           correlationId: String@cid
-          timestampe: Int
+          timestamp: Int

@@ -1,5 +1,5 @@
 
-export function setup() {
+export function main() {
 
     function handler(req: RequestContext) {
     }

@@ -1,7 +1,7 @@
 
-export function setup() {
+export function main() {
 
-    function handler(next, req: RequestContext) {
+    function handler(next: Function, req: RequestContext) {
         next();
     }
 

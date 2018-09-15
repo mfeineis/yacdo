@@ -1,5 +1,5 @@
 
-export function setup() {
+export function main() {
     const emailLookup = new Set();
 
     function replay(msg: Fact) {

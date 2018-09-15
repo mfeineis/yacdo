@@ -1,0 +1,51 @@
+version: "3.7"
+
+networks:
+  yacdo_studio_net:
+
+services:
+  yacdo_studio_server:
+    build:
+      context: ./server/
+    container_name: "yacdo_studio_server"
+    networks:
+      - yacdo_studio_net
+    ports:
+      - 4000:4000
+    volumes:
+      - /home/node/app/
+      - ./client/:/home/node/app/client/:ro
+      - ./server/:/home/node/app/server/:ro
+
+    command:
+      - /bin/sh
+      - -c
+      - |
+        cd /home/node/app/
+
+        echo "Setting up /home/node/app/..."
+
+        cd /home/node/app/server/
+        npm install
+
+        cd /root/app/
+        echo "Done."
+
+  #gql_client:
+  #  build:
+  #    context: ./client/
+  #  container_name: "gql_client"
+  #  environment:
+  #    - ELM_HOME=/root/.elm
+  #  volumes:
+  #    - /root/app
+  #    - /root/app/elm-stuff/
+
+  #    # Bounded contexts
+  #    - ./home/:/root/app/home/
+  #    - /root/app/home/client/elm-stuff/
+  #  command:
+  #    - /bin/sh
+  #    - -c
+  #    - |
+  #      echo "TODO: Setup the client..."

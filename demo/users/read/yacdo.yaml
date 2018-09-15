@@ -1,10 +1,11 @@
 version: "0.1"
 
 readviews:
-  - handler: "./createdUsers.ts"
+  - handler:
+      main: "./createdUsers.ts"
+      runtime: "typescript"
     replay:
       - "USER_CREATED!"
-    runtime: "typescript"
     #schema:
       # TODO: GraphQL?
 

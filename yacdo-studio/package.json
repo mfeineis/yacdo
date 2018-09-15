@@ -1,0 +1,32 @@
+{
+  "name": "yacdo-studio-server",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "nodemon --watch server/main.js node server/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfeineis/yacdo.git"
+  },
+  "author": "Martin Feineis",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/mfeineis/yacdo/issues"
+  },
+  "homepage": "https://github.com/mfeineis/yacdo#readme",
+  "dependencies": {
+    "koa": "^2.5.3",
+    "koa-mount": "^3.0.0",
+    "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
+    "koa-static": "^5.0.0",
+    "ramda": "^0.25.0",
+    "yaml": "^1.0.0-rc.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
